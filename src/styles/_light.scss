@@ -1,0 +1,44 @@
+.light {
+  background-color: $light-bg;
+  color: $text-dark;
+
+  body {
+    background-color: $light-bg;
+    color: $text-dark;
+  }
+
+  .task-app {
+    background-color: $secondary-light-bg;
+    border: 1px solid #333;
+    color: $text-dark;
+  }
+
+  .input-group input {
+    background-color: $input-bg-light;
+    color: $text-dark;
+    border: 1px solid $text-dark;
+  }
+
+  .input-group button {
+    background-color: $accent-light;
+    color: white;
+    border: none;
+  }
+
+  .task-box {
+    background-color: $input-bg-light;
+    color: $text-dark;
+    border: 1px solid #333;
+  }
+
+  .task-box.done {
+    background-color: $done-bg-light;
+    opacity: 0.6;
+    text-decoration: line-through;
+  }
+
+  .toggle-container {
+    margin: 1rem;
+  }
+}
+

@@ -1,0 +1,128 @@
+@import "variables";
+@import "dark";
+@import "light";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: sans-serif;
+  transition: all 0.3s;
+}
+
+.task-app {
+  width: 90%;
+  max-width: 400px;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+
+  input {
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+  }
+
+  button {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.4rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.task-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #caa6ff;
+    border-radius: 34px;
+    transition: 0.4s;
+    border: 1px solid #fff;
+
+    &::before {
+      position: absolute;
+      content: "🌙";
+      height: 20px;
+      width: 20px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      border-radius: 50%;
+      transition: 0.4s;
+      text-align: center;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  input:checked + .slider {
+    background-color: $color-switch-light;
+  }
+
+  input:checked + .slider::before {
+    background-color: $color-switch-dark;
+    transform: translateX(26px);
+    content: "☀️";
+  }
+}
+
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+
+@media (max-width: 768px) {
+  .task-app {
+    width: 95%;
+    margin-top: 1rem;
+  }
+
+  .input-group input {
+    width: 70%;
+  }
+}
+
