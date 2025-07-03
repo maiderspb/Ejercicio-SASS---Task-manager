@@ -9,7 +9,9 @@ body {
   min-height: 100vh;
   margin: 0;
   font-family: sans-serif;
-  transition: all 0.3s;
+  transition: all 0.3s ease-in-out;
+  background-color: $light-bg;
+  color: $text-dark;
 }
 
 .task-app {
@@ -19,6 +21,8 @@ body {
   border-radius: 12px;
   margin-top: 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: $light-bg;
+  border: 1px solid $task-card-light;
 }
 
 .input-group {
@@ -31,7 +35,9 @@ body {
     flex: 1;
     padding: 0.5rem;
     border-radius: 8px;
-    border: 1px solid #333;
+    border: 1px solid $task-card-light;
+    background-color: $light-bg;
+    color: $text-dark;
   }
 
   button {
@@ -44,6 +50,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: $accent-light;
+    color: white;
   }
 }
 
@@ -54,7 +62,15 @@ body {
   padding: 0.8rem;
   margin-bottom: 0.8rem;
   border-radius: 8px;
-  border: 1px solid #333;
+  border: 1px solid $task-card-light;
+  background-color: $light-bg;
+  color: $text-dark;
+
+  &.done {
+    background-color: $done-bg-light;
+    opacity: 0.6;
+    text-decoration: line-through;
+  }
 }
 
 .toggle-switch {
@@ -76,7 +92,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #caa6ff;
+    background-color: $color-switch-light;
     border-radius: 34px;
     transition: 0.4s;
     border: 1px solid #fff;
@@ -98,11 +114,11 @@ body {
   }
 
   input:checked + .slider {
-    background-color: $color-switch-light;
+    background-color: $color-switch-dark;
   }
 
   input:checked + .slider::before {
-    background-color: $color-switch-dark;
+    background-color: white;
     transform: translateX(26px);
     content: "☀️";
   }
@@ -114,7 +130,6 @@ body {
   margin-bottom: 1rem;
 }
 
-
 @media (max-width: 768px) {
   .task-app {
     width: 95%;
@@ -125,4 +140,3 @@ body {
     width: 70%;
   }
 }
-

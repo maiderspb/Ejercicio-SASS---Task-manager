@@ -2,39 +2,36 @@
   background-color: $primary-bg;
   color: $text-light;
 
-  body {
-    background-color: $primary-bg;
-    color: $text-light;
-  }
-
   .task-app {
     background-color: $secondary-bg;
     border: 1px solid $task-card;
     color: $text-light;
   }
 
-  .input-group input {
-    background-color: $primary-bg;
-    color: $text-light;
-    border: 1px solid $text-light;
-  }
+  .input-group {
+    input {
+      background-color: $primary-bg;
+      color: $text-light;
+      border: 1px solid $text-light;
+    }
 
-  .input-group button {
-    background-color: $accent-dark;
-    color: white;
-    border: none;
+    button {
+      background-color: $accent-dark;
+      color: white;
+      border: none;
+    }
   }
 
   .task-box {
     background-color: $primary-bg;
     color: $text-light;
     border: 1px solid $text-light;
-  }
 
-  .task-box.done {
-    background-color: $done-bg-dark;
-    opacity: 0.6;
-    text-decoration: line-through;
+    &.done {
+      background-color: $done-bg-dark;
+      opacity: 0.6;
+      text-decoration: line-through;
+    }
   }
 
   .toggle-container {

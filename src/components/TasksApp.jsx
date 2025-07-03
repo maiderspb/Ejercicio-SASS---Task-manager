@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-function TaskApp({ isDark }) {
-
+function TaskApp({ isDark, setIsDark }) {
   const [tasks, setTasks] = useState([
     "To study React fundamentals",
     "To study React fundamentals",
@@ -31,12 +30,20 @@ function TaskApp({ isDark }) {
     }
   };
 
+  const backgroundColor = isDark ? "#9E78CF" : "#15101C";
+  const borderColor = isDark ? "#15101C" : "#9E78CF";
+  const textColor = isDark ? "#15101C" : "#ffffff";
+
   return (
     <div
       className={`task-app ${isDark ? "dark" : "light"}`}
-      style={{ padding: "1rem" }}
+      style={{
+        padding: "1rem",
+        backgroundColor: backgroundColor,
+        color: textColor,
+        minHeight: "100vh",
+      }}
     >
-      {/* Switch Toggle */}
       <div
         style={{
           display: "flex",
@@ -79,7 +86,6 @@ function TaskApp({ isDark }) {
         </label>
       </div>
 
-      {/* Add Task Input */}
       <div
         style={{ display: "flex", marginBottom: "1rem", alignItems: "center" }}
       >
@@ -91,7 +97,9 @@ function TaskApp({ isDark }) {
             flex: 1,
             padding: "0.5rem",
             borderRadius: "8px",
-            border: "2px solid black",
+            border: `2px solid ${borderColor}`,
+            backgroundColor: isDark ? "#CEAFF5" : "#15101c",
+            color: "black",
           }}
         />
         <button
@@ -102,7 +110,7 @@ function TaskApp({ isDark }) {
             height: "2.5rem",
             fontSize: "1.4rem",
             borderRadius: "8px",
-            backgroundColor: isDark ? "#1a1a2e" : "#6d4aff",
+            backgroundColor: isDark ? "#15101c" : "#6d4aff",
             color: "white",
             border: "none",
             cursor: "pointer",
@@ -115,21 +123,20 @@ function TaskApp({ isDark }) {
         </button>
       </div>
 
-      {/* To Do Section */}
       <h4>Tasks to do - {tasks.length}</h4>
       {tasks.map((task, index) => (
         <div
-          className="task-app"
-          id={isDark ? "dark" : "light"}
           key={index}
           style={{
-            border: "1px solid black",
+            border: `1px solid ${borderColor}`,
             borderRadius: "8px",
             padding: "0.8rem",
             marginBottom: "0.8rem",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
+            backgroundColor: isDark ? "#CEAFF5" : "#15101c",
+            color: isDark ? "#15101c" : "#fff",
           }}
         >
           <span>{task}</span>
@@ -150,15 +157,14 @@ function TaskApp({ isDark }) {
         </div>
       ))}
 
-      {/* Done Section */}
       <h4>Done - {done.length}</h4>
       {done.map((task, index) => (
         <div
-          className="task-box"
           key={index}
           style={{
-            backgroundColor: isDark ? "#c49eff" : "#f3e8ff",
-            border: "1px solid black",
+            backgroundColor: isDark ? "#CEAFF5" : "#15101C",
+            color: isDark ? "#fff" : "#fff",
+            border: `1px solid ${borderColor}`,
             borderRadius: "8px",
             padding: "0.8rem",
             marginBottom: "0.8rem",
@@ -174,4 +180,3 @@ function TaskApp({ isDark }) {
 }
 
 export default TaskApp;
-

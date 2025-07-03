@@ -1,26 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TaskApp from "./components/TasksApp.jsx";
 
 function App() {
   const [isDark, setIsDark] = useState(true);
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.body.style.backgroundColor = isDark ? "#9270d6" : "white";
   }, [isDark]);
 
   return (
     <div>
-      <div style={{ position: "absolute", top: 20, right: 20 }}>
-        <label className="toggle-switch">
-          <input
-            type="checkbox"
-            checked={isDark}
-            onChange={() => setIsDark(!isDark)}
-          />
-          <span className="slider" />
-        </label>
-      </div>
-
       <div
         className="container"
         style={{
@@ -32,13 +21,10 @@ function App() {
           backgroundColor: isDark ? "#9270d6" : "#eaeaea",
         }}
       >
-        <TaskApp isDark={isDark} />
+        <TaskApp isDark={isDark} setIsDark={setIsDark} />
       </div>
     </div>
   );
 }
 
 export default App;
-
-
-
