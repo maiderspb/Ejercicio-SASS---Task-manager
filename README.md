@@ -41,3 +41,4 @@ npm start
 - Haz click en 🗑️ para eliminar la tarea.
 
 - Cambia el tema con el toggle switch arriba a la derecha. 🌙☀️
+
